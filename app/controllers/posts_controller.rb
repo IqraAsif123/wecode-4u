@@ -10,9 +10,11 @@ class PostsController < ApplicationController
     def index
         @posts = Post.all
     end
+    def user_profile
+    end
     private
   def post_params
-    params.require(:post).permit(:title, :description)
+    params.require(:post).permit(:title, :description )
   end
   
 end
