@@ -21,11 +21,10 @@
                   <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search  for student" aria-label="Search">
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
                   <%if !user_signed_in?%>
-                  <button type="button" class="btn btn-secondary btn-sm">Sign up</button>
-                  <button type="button" class="btn btn-secondary btn-sm">Sign in</button>
+                  <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Sign up', new_user_registration_path) %></button>
+                  <button type="button" class="btn btn-secondary btn-sm"><%= link_to('Sign in', new_user_session_path) %></button>
                   <%elsif user_signed_in?%>
-                  <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Log out', destroy_user_session_path, method: :delete) %>        
-</button>
+                  <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Log out', destroy_user_session_path, method: :delete) %>  </button>
                   <%end%>
                 </form>
       </nav>
