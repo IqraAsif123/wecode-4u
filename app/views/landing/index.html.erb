@@ -1,6 +1,6 @@
       
 <div class="jumbotron">
-<h1 class="display-5">PAGE NAME</h1>
+<h1 class="display-5">WECODE-4U</h1>
 <p class="lead">Our page intro.</p>
 <!-- <hr class="my-4"> -->
 <!-- <p>More details to add in front.</p> -->
@@ -8,6 +8,7 @@
 </div>
 <!-- <div class="jumbotron jumbotron-fluid"> -->
 <!-- <div class="container"> -->
+ <%if !user_signed_in?%>
 <div class="bd-example">
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
@@ -17,21 +18,22 @@
 </ol>
 <div class="carousel-inner">
 <div class="carousel-item active">
-<img src="laptop.jpg" style="width:300px;height:600px;" class="d-block w-100" alt="...">
+<%# <img src="./images/laptop.jpg" style="width:300px;height:600px;" class="d-block w-100" alt="..."> %>
+<%=image_tag ("laptop.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
 <!-- <h5>First slide label</h5> -->
 <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
 </div>
 </div>
 <div class="carousel-item">
-<img src="ruby.jpg" style="width:300px;height:600px;" class="d-block w-100" alt="...">
+<%=image_tag ("ruby.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
 <!-- <h5>Second slide label</h5>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
 </div>
 </div>
 <div class="carousel-item">
-<img src="laptop2.jpg" style="width:300px;height:600px;"class="d-block w-100" alt="...">
+<%=image_tag ("laptop2.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
 <!-- <h5>Third slide label</h5>
 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
@@ -48,6 +50,7 @@
 </a>
 </div>
 </div>
+<%end%>
 <!-- <h1 class="display-4"></h1>
 <p class="lead">more details to add.</p> -->
 <!-- </div> -->
