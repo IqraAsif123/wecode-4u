@@ -22,17 +22,16 @@
         <a class="navbar-brand" href="/user_profile">Wecode-4u</a>
         <% end %>
                 <form class="form-inline">
-                  <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search  for student" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
                   <%if !user_signed_in?%>
                   <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Sign up', new_user_registration_path) %></button>
                   <button type="button" class="btn btn-secondary btn-sm"><%= link_to('Sign in', new_user_session_path) %></button>
                   <%elsif user_signed_in?%>
-                  <button type="button" class="btn btn-secondary btn-sm">My Profile</button>
+                  <button type="button" class="btn btn-secondary btn-sm"> <%= link_to('My Profile') %></button>
                   <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Log out', destroy_user_session_path, method: :delete) %>  </button>
                   <%end%>
                 </form>
       </nav>
+
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -41,7 +40,9 @@
 <% end %>
     <%= yield %>
       <nav class="navbar fixed-bottom navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">portfolio</a>
+            <a class="navbar-brand" href="#">Wecode4u</a>
+           &copy; Copyright 2019 Wecode-4u
+
           </nav>
 
   </body>

@@ -50,7 +50,27 @@
 </div>
 </div>
 </div>
+<div class="posts">
+ <% @posts.each do |post| %>
+<%=post.title%>
+<%=post.description%>
 <%end%>
+ </div>
+<%elsif user_signed_in?%>
+<div>
+ <h1>Home</h1>
+ <div class="jumbotron">
+  <a class="btn btn-primary btn-lg" href="/posts/new" role="button">addpost</a>
+</div>
+ </div>
+ <div class =>
+ <% @posts.each do |post| %>
+<%=post.title%>
+<%=post.description%>
+<%end%>
+ </div>
+<%end%>
+
 
 
 
