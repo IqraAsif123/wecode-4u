@@ -17,9 +17,9 @@
   <body>
   <nav class="navbar navbar-dark bg-dark">
     <%if !user_signed_in?%>
-        <a class="navbar-brand" href="#">PAGE NAME</a>
+        <a class="navbar-brand" href="#">Wecode-4u</a>
         <% else %>
-        <a class="navbar-brand" href="user_profile">PAGE NAME</a>
+        <a class="navbar-brand" href="/user_profile">Wecode-4u</a>
         <% end %>
                 <form class="form-inline">
                   <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search  for student" aria-label="Search">
@@ -28,6 +28,7 @@
                   <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Sign up', new_user_registration_path) %></button>
                   <button type="button" class="btn btn-secondary btn-sm"><%= link_to('Sign in', new_user_session_path) %></button>
                   <%elsif user_signed_in?%>
+                  <button type="button" class="btn btn-secondary btn-sm">My Profile</button>
                   <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Log out', destroy_user_session_path, method: :delete) %>  </button>
                   <%end%>
                 </form>
