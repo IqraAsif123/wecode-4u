@@ -20,11 +20,32 @@ class PostsController < ApplicationController
     def user_profile
       @current_user_posts = Post.where(user_id: current_user.id)
     end
+
     def destroy
       @post = Post.find(params[:id])
       @post.destroy
       redirect_to user_profile_path
     end
+
+    def update
+      @post = Post.find(params[:id])
+      if (@post.update(post_params))
+        redirect_to post_path(@post)
+        else
+          render 'edit'
+        end
+    end
+
+    def show
+    end
+
+    def edit
+      @post = Post.find(params[:id])
+    end
+
+
+
+
     private
   def post_params
     params.require(:post).permit(:title, :description )

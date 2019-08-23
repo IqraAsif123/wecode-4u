@@ -59,14 +59,15 @@
 <%elsif user_signed_in?%>
 <div>
  <h1>Home</h1>
- <div class="jumbotron">
-  <a class="btn btn-primary btn-lg" href="/posts/new" role="button">addpost</a>
-</div>
+ 
+  <%=link_to "Add Post", new_post_path %>
+
  </div>
  <div class =>
  <% @posts.each do |post| %>
 <%=post.title%>
 <%=post.description%>
+
 <%end%>
  </div>
 <%end%>

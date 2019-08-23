@@ -26,7 +26,7 @@
                   <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Sign up', new_user_registration_path) %></button>
                   <button type="button" class="btn btn-secondary btn-sm"><%= link_to('Sign in', new_user_session_path) %></button>
                   <%elsif user_signed_in?%>
-                  <button type="button" class="btn btn-secondary btn-sm"> <%= link_to('My Profile') %></button>
+                  <button type="button" class="btn btn-secondary btn-sm"> <%= link_to 'My Profile', user_profile_path %></button>
                   <button type="button" class="btn btn-secondary btn-sm">  <%= link_to('Log out', destroy_user_session_path, method: :delete) %>  </button>
                   <%end%>
                 </form>
