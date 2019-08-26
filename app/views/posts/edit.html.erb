@@ -1,0 +1,18 @@
+<div>
+<h1>ADD POST</h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>

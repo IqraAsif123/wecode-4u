@@ -1,0 +1,25 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div>
+ <% @current_user_posts.each do |post| %>
+<div class="card text-center">
+ <div class="card-header">
+  </div>
+    <div class="card-body">
+      <h5 class="card-title"><%=post.title%></h5>
+<p class="card-text"><%=post.description%></p>
+      </div>
+      </div>
+     <%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+    
+    <%= link_to 'Edit', edit_post_path(post)%>
+  <% end %>
+
+  <div class="card-footer text-muted">
+  </div>
+</div>
