@@ -17,9 +17,9 @@
   <body>
   <nav class="navbar navbar-dark bg-dark">
     <%if !user_signed_in?%>
-        <a class="navbar-brand" href="#">Wecode-4u</a>
+        <a class="navbar-brand" href="/landing/index">Wecode-4u</a>
         <% else %>
-        <a class="navbar-brand" href="/user_profile">Wecode-4u</a>
+        <a class="navbar-brand" href="/landing/index">Wecode-4u</a>
         <% end %>
                 <form class="form-inline">
                   <%if !user_signed_in?%>
@@ -31,7 +31,6 @@
                   <%end%>
                 </form>
       </nav>
-
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -39,8 +38,9 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
     <%= yield %>
+
       <nav class="navbar fixed-bottom navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Wecode4u</a>
+            <a class="navbar-brand" href="#">Wecode-4u</a>
            &copy; Copyright 2019 Wecode-4u
 
           </nav>

@@ -2,12 +2,7 @@
 <div class="jumbotron">
 <h1 class="display-5">WECODE-4U</h1>
 <p class="lead">Our page intro.</p>
-<!-- <hr class="my-4"> -->
-<!-- <p>More details to add in front.</p> -->
-<!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
 
-<!-- <div class="jumbotron jumbotron-fluid"> -->
-<!-- <div class="container"> -->
 <div class="bd-example">
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
@@ -17,25 +12,22 @@
 </ol>
 <div class="carousel-inner">
 <div class="carousel-item active">
-<%# <img src="./images/laptop.jpg" style="width:300px;height:600px;" class="d-block w-100" alt="..."> %>
+
 <%=image_tag ("laptop.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
-<!-- <h5>First slide label</h5> -->
-<!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+
 </div>
 </div>
 <div class="carousel-item">
 <%=image_tag ("ruby.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
-<!-- <h5>Second slide label</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+
 </div>
 </div>
 <div class="carousel-item">
 <%=image_tag ("laptop2.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
-<!-- <h5>Third slide label</h5>
-<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+
 </div>
 </div>
 </div>
@@ -50,26 +42,70 @@
 </div>
 </div>
 </div>
-<div class="posts">
- <% @posts.each do |post| %>
-<%=post.title%>
-<%=post.description%>
-<%end%>
+
+
+<% @posts.each do |post| %>
+<div class="card text-center">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+ <div class =>
+<h5 class="card-title"><%=post.title%></h5>
+<p class="card-text"><%=post.description%></p>
  </div>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+<%if @posts == 3%>
+<%break%>
+<%end%>
+<%end%>
+<%# need a condition for limiting the post %>
+
+
+ <section class="callToAction" style="padding-top:30px">
+    <div class="container">
+    <div class="ctaBox">
+    <div class="col-lg-9">
+    <h1>Wecode-4u is here to help you!</h1>
+    </div>
+    <div class="col-lg-3">
+    <a href="ContactUs" class="buttonColor" style="float:right;">
+    CONTACT-US</a>
+    </div>
+    <div styel="clear:both;"></div>
+    </div>
+    </div>
+    </section>
+
+
 <%elsif user_signed_in?%>
+
 <div>
  <h1>Home</h1>
- 
+ </div>
+
+ <div>
   <%=link_to "Add Post", new_post_path %>
-
  </div>
- <div class =>
+
  <% @posts.each do |post| %>
-<%=post.title%>
-<%=post.description%>
-
-<%end%>
+<div class="card text-center">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+ <div class =>
+<h5 class="card-title"><%=post.title%></h5>
+<p class="card-text"><%=post.description%></p>
  </div>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+<%end%>
+
+ 
 <%end%>
 
 
