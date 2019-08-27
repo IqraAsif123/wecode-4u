@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   root 'landing#index'
   get '/user_profile', to: 'posts#user_profile'
+  get '/ContactUs', to: 'posts#contact'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

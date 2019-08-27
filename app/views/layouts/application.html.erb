@@ -38,12 +38,14 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
     <%= yield %>
+      <div style="height: 100px"> </div>
 
-      <nav class="navbar fixed-bottom navbar-dark bg-dark">
+      <div class="navbar fixed-bottom navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Wecode-4u</a>
+                <%=link_to "Contact Us", "/ContactUs"  %>
            &copy; Copyright 2019 Wecode-4u
 
-          </nav>
+          </div>
 
   </body>
 </html>

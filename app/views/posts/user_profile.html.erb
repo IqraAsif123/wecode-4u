@@ -11,6 +11,18 @@
     <div class="card-body">
       <h5 class="card-title"><%=post.title%></h5>
 <p class="card-text"><%=post.description%></p>
+
+
+
+
+
+
+<h5 class="card-title">
+<%post.post_tag.each do|tag|%>
+      <%=tag + " "%>
+<%end%>
+</h5>
+
       </div>
       </div>
      <%= link_to 'Delete', post_path(post),
