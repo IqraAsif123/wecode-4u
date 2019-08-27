@@ -5,9 +5,18 @@ class PostsController < ApplicationController
       @post = Post.new
     end
     def create
+        tags = params[:post][:tag].split(" ")
+        tag_rows=[]
+        tags.each do |tag|
+           tag_rows <<Tag.find_or_create_by(name: tag)
+        end
         @post = Post.new(post_params.merge(user_id: current_user.id))
-        
         if @post.save
+          tag_rows.each do |tag_row|
+            PostTag.create(post_id: @post.id, tag_id: tag_row.id)
+          end
+  
+
         redirect_to "/user_profile"
         else
           print @post.errors.full_messages
@@ -48,7 +57,7 @@ class PostsController < ApplicationController
     
     private
   def post_params
-    params.require(:post).permit(:title, :description )
+    params.require(:post).permit(:title, :description)
   end
   PostsController#user_profile is missing a template for request formats: text/html
 end

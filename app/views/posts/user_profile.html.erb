@@ -18,8 +18,8 @@
 
 
 <h5 class="card-title">
-<%post.post_tag.each do|tag|%>
-      <%=tag + " "%>
+<%post.tags.each do|tag|%>
+      <%=tag.name + " "%>
 <%end%>
 </h5>
 
