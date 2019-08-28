@@ -1,6 +1,6 @@
 <%if !user_signed_in?%>   
-<%# <div class="jumbotron"> %>
 
+      <div style="height: 100px"> </div>
 
 <div class="bd-example">
 <div>
@@ -17,7 +17,7 @@
 <div class="carousel-inner">
 <div class="carousel-item active">
 <h1 class="display-5">WECODE-4U</h1>
-<p class="lead">Our aim to help our audience .</p>
+<p class="lead">Our mission is to provide a free, world-class solution to anyone, anywhere.</p>
 <%=image_tag ("laptop.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
 
@@ -25,7 +25,7 @@
 </div>
 <div class="carousel-item">
 <h1 class="display-5">WECODE-4U</h1>
-<p class="lead">We are here to help you just drop your question.</p>
+<p class="lead">We take Requirements .</p>
 <%=image_tag ("ruby.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
 
@@ -33,13 +33,12 @@
 </div>
 <div class="carousel-item">
 <h1 class="display-5">WECODE-4U</h1>
-<p class="lead">If you are ready to learn some interesting stuff.</p>
+<p class="lead">description.</p>
 <%=image_tag ("laptop2.jpg"), style:"width:300px;height:600px;", class:"d-block w-100", alt:"..."%>
 <div class="carousel-caption d-none d-md-block">
 
 </div>
 </div>
-<%# </div> %>
 <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 <span class="sr-only">Previous</span>
@@ -60,7 +59,7 @@
   <div class="card-body">
  <div>
 <h5 class="card-title"><%=post.title%></h5>
-<p class="card-text"><%=post.description%></p>
+<p class="card-text"><pre><%=post.description%></pre></p>
 <h5 class="card-title">
 <%post.tags.each do|tag|%>
       <%=tag.name%>
@@ -74,32 +73,30 @@
 </div>
 <%end%>
 
- <section class="bigMessage" style="padding-bottom:15px;">
- <center>
- <div class="container" id="test">
-  <h1></h1>
-  </center>
- <br>
- <div class="row">
- <div class="col-lg-2 col-md-2"></div>
- <div class="col-lg-3 col-md-4">
- <img src="https://image.flaticon.com/icons/svg/1374/1374191.svg" style="width:50px;" alt>
- <h2>What have you learned about coding? </h2>
- </div>
- <div class="col-lg-2 col-md-2"></div>
+
+
+      <div style="height: 100px"> </div>
+
  
- </div>
- </div>
- </section>
+ <div class="col-lg-12 col-md-12">
+
+ <div class="row-fluid basic-homepage-child homepage-child-row reveal_slow" data-sr-id="5" style="; visibility: visible; transform: translateY(0) scale(1) rotateY(0); opacity: 1; -webkit-transform: translateY(0) scale(1) rotateY(0); opacity: 1;transition: transform 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s, opacity 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s; -webkit-transition: -webkit-transform 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s, opacity 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s; ">
+    <div class="width-container">
+        <div class="text-center" data-sr-id="6" style="; visibility: visible; transform: translateY(0) scale(1) rotateY(0); opacity: 1; -webkit-transform: translateY(0) scale(1) rotateY(0); opacity: 1;transition: transform 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s, opacity 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s; -webkit-transition: -webkit-transform 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s, opacity 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s; ">
+            <h3 class="center">OUR MISSION</h3>
+        </div>
+        <div class="row-fluid clearfix child-page-wysiwyg center reveal_slow" data-sr-id="7" style="; visibility: visible; transform: translateY(0) scale(1) rotateY(0); opacity: 1; -webkit-transform: translateY(0) scale(1) rotateY(0); opacity: 1;transition: transform 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s, opacity 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s; -webkit-transition: -webkit-transform 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s, opacity 1s cubic-bezier( 0.6, 0.2, 0.1, 1 ) 0s; ">
+                <p style="text-align: center;">wecode-4u<span>&nbsp;is a national initiative to help  young women and men to find best solution.</span></p>
+        </div>
+    </div>
+</div>
 
 
 
 <%elsif user_signed_in?%>
-
 <div>
  <h1>Home</h1>
  </div>
-
  <div>
   <%=link_to "Add Post", new_post_path %>
  </div>
@@ -111,7 +108,7 @@
   <div class="card-body">
  <div class =>
 <h5 class="card-title"><%=post.title%></h5>
-<p class="card-text"><%=post.description%></p>
+<p class="card-text"><pre><%=post.description%></p></pre>
  </div>
   </div>
   <div class="card-footer text-muted">
@@ -119,13 +116,25 @@
 </div>
 <%end%>
 
- 
 <%end%>
+      
 
-
-
-
-
+<section class="bigMessage" style="padding-bottom:15px;">
+ <center>
+ <div class="container" id="test">
+  <h1></h1>
+  </center>
+ <br>
+ <div class="row">
+ <div class="col-lg-3 col-md-4">
+ <img src="https://image.flaticon.com/icons/svg/1374/1374191.svg" style="width:50px;" alt>
+ <h2>What have you learned about coding? </h2>
+ </div>
+ <div class="col-lg-2 col-md-2"></div>
+ 
+ </div>
+ </div>
+ </section>
 
 
 

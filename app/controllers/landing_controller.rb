@@ -1,7 +1,13 @@
 class LandingController < ApplicationController
   def index
     filter_tag_id=params[:tag]
-    @tag=Tag.all
+
+    @tag=[]
+    Tag.all.each do |t|
+if  PostTag.where(tag_id: t.id).count() > 0
+  @tag << t
+end
+    end
 
     if filter_tag_id == nil
       @posts=Post.order("created_at desc").limit(3)

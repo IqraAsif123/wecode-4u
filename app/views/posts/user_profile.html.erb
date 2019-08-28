@@ -3,6 +3,8 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+
+
 <div>
  <% @current_user_posts.each do |post| %>
 <div class="card text-center">
@@ -10,7 +12,7 @@
   </div>
     <div class="card-body">
       <h5 class="card-title"><%=post.title%></h5>
-<p class="card-text"><%=post.description%></p>
+<p class="card-text"><pre><%=post.description%></pre></p>
 
 
 
